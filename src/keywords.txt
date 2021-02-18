@@ -1,0 +1,3 @@
+debugBegin	KEYWORD2
+debugPrint	KEYWORD2
+debugPrintln	KEYWORD2
