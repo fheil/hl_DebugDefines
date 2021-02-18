@@ -13,27 +13,28 @@ and the other called
 
 Depending on your choice, which off the 2 header files you include (it's only to change max. 2 characters :grin: ), you either get all the debug output to the serial monitor or you even don't have the code for debugging in your compiliation.
 
-So start with including one of the 2 header files
+So start with including one of the 2 header files (example shows the version with debugging ON)
 
 ``` 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 //..
 #include <hl_DebugDefines_On.h>
+//..
 
-//...
 void setup() {
   // put your setup code here, to run once:
 
 }
+//your further code below...
 ```
 
 If `hl_DebugDefines_On.h` is included, all the debug output will be compiled into your code and you get it in the serial monitor. If `hl_DebugDefines_Off.h` is included instead, no one off the debug code lines will pass the preprocessor. This will reduce the size of your compiled code.
 
 To use this easy way, you have to replace alle the calls to `Serial.*` this way:
 
-use `debugBegin()` instead of `Serial.begin()`
-use `debugPrint()` instead of `Serial.print()`
-use `debugPrintLn()` instead of `Serial.println()`
+ - use `debugBegin()` instead of `Serial.begin()`
+ - use `debugPrint()` instead of `Serial.print()`
+ - use `debugPrintLn()` instead of `Serial.println()`
 
 
